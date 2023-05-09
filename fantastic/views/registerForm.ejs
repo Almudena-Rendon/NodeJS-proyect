@@ -1,0 +1,102 @@
+<%- include('navbar') %>
+<div class="container-fluid">
+  <div class="row register">
+    <h1 class="titulo-all-wizards font-wizard text-center p-5">Register and enter our Community</h1>
+    <div class="register-form col-12 col-md-6 col-lg-4 text-center">
+      <img class="register-img img-fluid" src="/images/design/personaje1.jpg" alt="" height="500px" width="400px">
+    </div>
+    <div class="register-form col-12 col-md-6 col-lg-4 text-center mt-3">
+      <form
+        action="/wizard/register"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <input
+          class="form-control form-control-lg my-3  font-wizard text-center"
+          type="text"
+          placeholder="User Name"
+          aria-label=".form-control-lg example"
+          name="name"
+          required
+        />
+        <!-- <input
+          class="form-control form-control-lg my-3  font-wizard text-center"
+          type="text"
+          placeholder="Choose your House"
+          aria-label=".form-control-lg example"
+          name="house"
+          required
+        /> -->
+        <select  class="form-select font-wizard text-center"
+        aria-label="Default select example"
+        name="house"
+        lang="en">
+        <option disabled selected>Choose your favourtite Hogwarts House</option>
+          <option>Gryffindor</option>
+          <option>Hufflepuff</option>
+          <option>Ravenclaw</option>
+          <option>Slytherin</option>
+        </select> 
+        <!-- <input
+          class="form-control form-control-lg my-3  font-wizard text-center"
+          type="text"
+          placeholder="Blood Type"
+          aria-label=".form-control-lg example"
+          name="blood_status"
+        /> -->
+        <br>
+        <select  class="form-select font-wizard text-center"
+        aria-label="Default select example"
+        name="blood_status"
+        lang="en">
+        <option disabled selected>Tell us your blood type</option>
+          <option>Pure-blood</option>
+          <option>Half-blood</option>
+          <option>Muggle-born</option>
+        </select> 
+        <!-- <input
+          class="form-control form-control-lg my-3  font-wizard text-center"
+          type="text"
+          placeholder="Type of wand"
+          aria-label=".form-control-lg example"
+          name="Type_of_wand"
+          required
+        /> -->
+        <br><br>
+        <input
+          class="form-control form-control-lg my-3  font-wizard text-center"
+          type="email"
+          placeholder="Email Address"
+          aria-label=".form-control-lg example"
+          name="email"
+          required
+        />
+        <input
+          class="form-control form-control-lg my-3  font-wizard text-center"
+          type="password"
+          placeholder="Password"
+          aria-label=".form-control-lg example"
+          name="password"
+          required
+        />
+        <div class="my-3">
+          <label for="formFileLg" class="texto-blanco form-label font-wizard text-center">Upload an image</label>
+          <input
+            class="form-control form-control-lg font-wizard"
+            id="formFileLg"
+            type="file"
+            name="img"
+            lang="en"
+          />
+        </div>
+        <button type="submit" class="btn btn-secondary mb-3 button-portada m-1">
+          SIGN IN <i class="fa-solid fa-wand-sparkles"></i>
+        </button>
+      </form>
+      <h3 class="p-2 texto-blanco font-wizard" > <%- message %></h3>
+    </div>
+   
+  </div>
+</div>
+<%- include('footer') %>
+

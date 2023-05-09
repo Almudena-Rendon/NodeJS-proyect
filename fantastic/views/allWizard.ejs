@@ -1,0 +1,35 @@
+<%- include('navbar') %>
+
+<div class="all-wizards container-fluid">
+  <div class="row">
+    <div class="col">
+      <h1 class="titulo-all-wizards font-wizard text-center m-5">All Wizards</h1>
+      <h5 class="texto-blanco font-wizard text-center m-1">Go to the wizard's profile to find out more about them.</h5>
+    </div>
+  </div>
+  <div class="row">
+    <% result.forEach(wizard => { %>
+    <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center my-5">
+      <div class="card card-responsive" style="width: 20rem">
+        <img
+          src="/images/wizards/<%- wizard.wizard_avatar %>"
+          class="card-img-top img-fluid"
+          alt="..."
+        />
+        <div class="card-body overlay">
+          <p class="font-wizard card-title"><%- wizard.wizard_name %></p>
+          <div class="iconos-contenedor">
+            <a
+              href="/wizard/otherOneWizard/<%- wizard.wizard_id %>"
+              class="btn"
+              ><i class="fa-solid fa-wand-sparkles"></i></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</div>
+
+<%- include('footer') %>

@@ -1,0 +1,13 @@
+.edit-creature{
+  background-image: linear-gradient(
+  rgb(5, 5, 5),
+  rgba(15, 30, 52, 0.4)
+ ),  
+  url(/images/design/cover7.jpg);
+  background-position: cover;
+}
+
+.creature-form{
+  margin:0px auto;
+  padding: 15vh 0px;
+}

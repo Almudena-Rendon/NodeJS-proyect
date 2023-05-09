@@ -1,0 +1,15 @@
+.addCreature{
+  background-image:  
+  linear-gradient(
+  rgb(16, 20, 27),
+  rgba(15, 30, 52, 0.1)
+ ),  
+  url(/images/design/cover2.jpg);
+  background-position: center;
+}
+
+.form-creature{
+  margin:0px auto;
+  padding-top: 4.8vh;
+  padding-bottom: 4vh;
+}

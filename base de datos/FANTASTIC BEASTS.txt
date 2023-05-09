@@ -1,0 +1,74 @@
+FANTASTIC BEASTS
+
+******************************************************************************************
+
+WIZARD
+wizard_id
+Name
+House
+Email
+Password
+wizard_avatar
+Type of wand 
+Status
+
+
+
+CREATURES
+creature_id
+Name
+Native to 
+Description
+Ministry of Magic Classification (danger classification (X, XXX, XXX))
+creature_photo
+Status
+wizard_id
+foreign key (wizard_id) references wizard(wizard_id)
+
+FK: wizard_id
+
+******************************************************************************************
+
+CREATE DATABASE fantastic_beasts;
+
+USE fantastic_beasts;
+
+CREATE TABLE wizard (
+wizard_id int not null auto_increment,
+name varchar(100) not null,
+email varchar(60) not null unique,
+password varchar(100) not null,
+wizard_avatar varchar(45),
+house varchar(45),
+blood_status varchar(45),
+type_of_wand varchar(45),
+status tinyint(1) not null default '0',
+primary key(wizard_id) 
+);
+
+select * from wizard;
+
+insert into wizard (name, email, password, house, type_of_wand) values ("Newt Scamander", "newtscamander@newtscamander.com", "newtscamander@newtscamander.com", "Hufflepuff","Wood and core");
+insert into wizard (name, email, password, house, type_of_wand) values ("Albus Dumbledore", "albusdumbledore@albusdumbledore.com", "albusdumbledore@albusdumbledore.com", "Gryffindor","The Elder Wand");
+
+CREATE TABLE CREATURE( 
+creature_id int not null auto_increment,
+name varchar(100) not null,
+native_to varchar(45),
+description varchar(150),
+classification varchar(45),
+creature_photo varchar(45),
+status tinyint(1) not null default '0',
+wizard_id int not null, -- wizard_id
+primary key(creature_id),
+foreign key(wizard_id) references wizard(wizard_id) on delete cascade on update cascade -- FK (foreign key)
+);
+
+select * from creature;
+
+insert into creature (name, native_to, classification, wizard_id) values ("Niffler", "Great Britain", "XXX", 1);
+insert into creature (name, native_to, classification, wizard_id) values ("Bowtruckle", "England, Germany and Scandinavia", "XX", 1);
+insert into creature (name, native_to, classification, wizard_id) values ("Fawkes", "Egypt, India and China", "XXXX", 2);
+
+
+

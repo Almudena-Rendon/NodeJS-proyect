@@ -1,0 +1,51 @@
+<%- include('navbar') %>
+<div class="container-fluid addCreature">
+  <h1 class="titulo-all-wizards font-wizard text-center p-5">Add a new magical creature</h1>
+  <div class="row ">
+    <div class="form-creature col-12 col-md-6 col-lg-4 text-center">
+      <form action="" method="post" enctype="multipart/form-data">
+        <input
+          class="form-control form-control-lg my-3 font-wizard text-center"
+          type="text"
+          placeholder="Name of magical creature"
+          aria-label=".form-control-lg example"
+          name="creature_name"
+          required
+        />
+    <select  class="form-select font-wizard text-center"
+    aria-label="Default select example"
+    name="classification"
+    lang="en">
+    <option disabled selected>Classification according to the Ministry of Magic</option>
+      <option>Beast</option>
+      <option>Being</option>
+      <option>Spirit</option>
+      <option>Giant</option>
+      <option>Spell</option>
+    </select> 
+    <br>
+    <textarea placeholder="Description" class="form-control font-wizard text-center" id="exampleFormControlTextarea1" name="description" rows="2"></textarea>
+
+        <div class="my-3">
+          <label for="formFileLg" class="form-label" lang="en"
+            ></label
+          >
+          <input
+            class="form-control form-control-lg font-wizard"
+            id="formFileLg"
+            type="file"
+            name="img"
+            lang="en"
+          />
+        </div>
+
+        <br>
+        <button type="button-portada" class="m-2 btn btn-secondary button-portada">
+          SAVE CREATURE <i class="fa-solid fa-wand-sparkles"></i>
+        </button>
+      </form>
+      <br /><br />
+    </div>
+  </div>
+</div>
+<%- include('footer') %>

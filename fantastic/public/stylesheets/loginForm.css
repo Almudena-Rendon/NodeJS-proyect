@@ -1,0 +1,14 @@
+.login{
+  background-image: linear-gradient(
+  rgb(16, 20, 27),
+  rgba(1, 30, 52, 0.1)
+ ),  
+  url(/images/design/cover.avif);
+  background-position: center;
+}
+
+.login-form{
+    margin:0px auto;
+    padding-top: 19vh;
+    padding-bottom: 19vh;
+}

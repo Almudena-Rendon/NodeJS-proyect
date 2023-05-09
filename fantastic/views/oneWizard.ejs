@@ -1,0 +1,92 @@
+<%- include('navbar') %>
+<div class="container-fluid one-wizard">
+  <div class="row">
+    <div class="col d-flex justify-content-end my-4">
+      <a href="/wizard"
+        ><button type="button" class="btn btn-dark button-log-out">
+          LOG OUT <i class="fa-solid fa-broom-ball"></i></button
+      ></a>
+    </div>
+  </div>
+  <h1 class="titulo-all-wizards font-wizard text-center p-3">
+    <%- resultWizard[0].wizard_name %>
+  </h1>
+  <div class="row">
+    <div class="col d-flex justify-content-center my-5">
+      <div class="card card-responsive text-center" style="width: 20rem">
+        <img
+          src="/images/wizards/<%- resultWizard[0].wizard_avatar %>"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <p class="card-text font-wizard"><%- resultWizard[0].email %></p>
+          <p class="card-text font-wizard"><%- resultWizard[0].house %></p>
+          <p class="card-text font-wizard">
+            <%- resultWizard[0].blood_status %>
+          </p>
+        </div>
+        <div class="card-body overlay">
+          <p class="font-wizard card-title">Edit your profile</p>
+          <div class="iconos-contenedor">
+            <a
+              href="/wizard/editWizard/<%- resultWizard[0].wizard_id%>"
+              class="btn"
+              ><i class="fa-solid fa-pen mb-5"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col d-flex justify-content-center">
+        <a href="/creature/addCreature/<%- resultWizard[0].wizard_id %>"
+          ><button type="button" class="btn btn-dark p-4 mb-3 button-creature font-wizard">
+            NEW MAGICAL CREATURE
+          </button></a
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <% resultCreature.forEach(creature => { %>
+
+    <div
+      class="card-responsive col-12 col-md-6 col-lg-4 d-flex justify-content-center my-5"
+    >
+      <h3><%- resultCreature.creature_name %></h3>
+      <div class="card" style="width: 20rem">
+        <img
+          src="/images/creatures/<%- creature.creature_photo %>"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body text-center font-wizard">
+          <h3 class="card-title"><%- resultCreature.creature_name %></h3>
+          <p><%- creature.creature_name %></p>
+          <p><%- creature.description %></p>
+          <p><%- creature.classification %></p>
+          <!-- <a href="/creature/delete/<%- creature.creature_id %>/<%- creature.wizard_id %>" class="btn btn-warning">Eliminar</a> -->
+        </div>
+        <div class="card-body overlay">
+          <div class="iconos-contenedor">
+            <a
+              href="/creature/editCreature/<%- creature.creature_id %>"
+              class="btn"
+              ><i class="fa-solid fa-pen mb-5"></i
+            ></a>
+            <a
+              href="/creature/logicDelete/<%- creature.creature_id %>/<%- creature.wizard_id %>"
+              class="btn"
+              ><i class="fa-solid fa-trash"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <% }) %>
+  </div>
+</div>
+<%- include('footer') %>

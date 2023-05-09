@@ -1,0 +1,43 @@
+<%- include('navbar') %>
+<div class="container-fluid one-wizard">
+  <h1 class="titulo-all-wizards font-wizard text-center p-5"><%- resultWizard[0].wizard_name %></h1>
+  <div class="row">
+    <div class="col d-flex justify-content-center my-4">
+      <div class="card text-center" style="width: 20rem">
+        <img
+          src="/images/wizards/<%- resultWizard[0].wizard_avatar %>"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <p class="card-text font-wizard"><%- resultWizard[0].email %></p>
+          <p class="card-text font-wizard"><%- resultWizard[0].house %></p>
+          <p class="card-text font-wizard"><%- resultWizard[0].blood_status %></p>
+        </div>
+    </div>
+  </div>
+</div>
+  <div class="row">
+    <% resultCreature.forEach(creature => { %>
+    <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center my-5">
+      <h3><%- resultCreature.creature_name %></h3>
+      <div class="card" style="width: 20rem">
+        <img
+          src="/images/creatures/<%- creature.creature_photo %>"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body text-center font-wizard">
+          <h3 class="card-title"><%- resultCreature.creature_name %></h3>
+          <p><%- creature.creature_name %></p>
+          <p><%- creature.description %></p>
+          <p><%- creature.classification %></p>
+        </div>
+      </div>
+    </div>
+
+    <% }) %>
+  </div>
+
+</div>
+<%- include('footer') %>

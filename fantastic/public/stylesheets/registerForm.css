@@ -1,0 +1,15 @@
+/* seccion register */
+
+.register{
+  background-image: linear-gradient(
+    rgb(16, 20, 27),
+  rgba(51, 55, 61, 0.01)
+ ),  
+  url(/images/design/descarga2.jpg);
+  background-position: center;
+}
+
+.register-form{
+  margin:0px auto;
+}  
+

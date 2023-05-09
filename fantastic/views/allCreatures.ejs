@@ -1,0 +1,32 @@
+
+ <%- include('navbar') %>
+ <div class="container-fluid all-creatures">
+  <div class="row">
+    <div class="col">
+    <h1 class="texto-blanco font-wizard text-center m-5">All Magic Creatures </i></h1>
+  </div> 
+  </div>
+  <div class="row">
+    <% result.forEach(creature => { %>
+    <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center my-5">
+      <div class="card card-responsive" style="width: 20rem">
+        <img
+          src="/images/creatures/<%- creature.creature_photo %>"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body overlay">
+          <p class="card-title font-wizard"><%- creature.creature_name %></p>
+          <a
+            href="/wizard/otherOneWizard/<%- creature.wizard_id %>"
+            ><i class="fa-solid fa-hat-wizard"></i></a
+          >
+        </div>
+      </div>
+    </div>
+    <% }) %>
+ </div>
+</div>
+  <%- include('footer') %>
+
+

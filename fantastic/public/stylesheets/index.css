@@ -1,0 +1,113 @@
+/* clases generales */
+.font-wizard{
+  font-family: 'Macondo Swash Caps', cursive;
+}
+
+.texto-blanco{
+  color: white;
+}
+
+.card-mago{
+  height: 30rem;
+}
+
+.card img{
+  height: 30rem;
+  object-fit: fill;
+  border: 1px solid white;
+}
+
+/* barra de navegacion */
+.barra-navegacion{
+  padding: 1rem;
+  background-color: RGB(16,20,27);
+  font-size: 20px;
+}
+
+.logo-web{
+  filter: invert(1);
+  width: 60px;
+}
+
+.logo-web-responsive{
+  filter: invert(1);
+}
+
+ .navbar-collapse{
+  align-items: center;
+  justify-content: space-between;
+} 
+
+.button-portada{
+  background-color: RGB(107,99,181);
+}
+
+.button-portada:hover{
+  background-color: RGB(77,41,131);
+}
+
+/* seccion portada */
+ .home {
+  background-image:url(/images/design/cover14.jpg);
+  background-size: cover;
+  background-position: 50% 90%; 
+  height: 74vh;
+}
+
+.home div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titulo-portada{
+  /* font-family: Mason Sans Ot;  */
+  font-family: 'Macondo Swash Caps', cursive;
+  font-size: 35px;
+  /* color: RGB(9,13,15); */
+  /* padding-bottom: 13rem;  */
+}
+
+.home-inferior{
+  background-color: RGB(13,16,22);
+  padding-top: 3rem;
+}
+/* footer */
+
+.footer{
+  background-color: RGB(16,20,27);
+}
+
+.footer1 {
+  padding: 1rem;
+}
+
+.footer2{
+  padding: 0.5rem;
+  font-size: 12px;
+}
+
+@media screen and (max-width: 767px){
+  .logo-web{
+    display: none;
+  }
+  .titulo-portada{
+    font-size: 25px;
+    padding-bottom: 10rem;
+  }
+
+}
+
+@media screen and (max-width: 400px){
+  .titulo-portada{
+    font-size: 20px;
+  }
+  
+.img-register{
+  margin-left: 1rem;
+}
+.register-form{
+  margin-top: 1rem;
+}
+
+}

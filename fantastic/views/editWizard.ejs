@@ -1,0 +1,62 @@
+<%- include('navbar') %>
+<div class="container-fluid">
+  <div class="row edit-wizard">
+    <h1 class="titulo-all-wizards font-wizard text-center p-5">
+      Edit your profile
+    </h1>
+    <div class="edit-form col-12 col-md-6 col-lg-4 text-center">
+      <form
+        action="/wizard/editWizard/<%- result[0].wizard_id %>"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <input
+          class="form-control form-control-lg my-3 font-wizard text-center"
+          type="text"
+          placeholder="Nombre"
+          aria-label=".form-control-lg example"
+          name="name"
+          value="<%- result[0].wizard_name %> "
+          required
+        />
+        <input
+          class="form-control form-control-lg my-3 font-wizard text-center"
+          type="email"
+          placeholder="Email"
+          aria-label=".form-control-lg example"
+          name="email"
+          value="<%- result[0].email %> "
+          required
+        />
+        <div class="my-3">
+          <label for="formFileLg" class="form-label font-wizard texto-blanco"
+            >Upload a new profile picture</label
+          >
+          <input
+            class="form-control form-control-lg font-wizard"
+            id="formFileLg"
+            type="file"
+            name="img"
+          />
+        </div>
+        <label for="formFileLg" class="form-label font-wizard texto-blanco"
+            >Forgot your pasword?</label
+          >
+        <input
+        class="form-control form-control-lg my-3 font-wizard text-center"
+        type="password"
+        placeholder="Get a new password"
+        aria-label=".form-control-lg example"
+        name="password"
+      />
+        <button type="submit" class="btn btn-secondary mb-3 button-portada m-1">
+          SAVE AND GO BACK <i class="bi bi-magic"></i>
+        </button>
+        <br>
+        <a href="/wizard/logicDelete/<%- result[0].wizard_id%>"><button type="button" class="btn btn-link text-center texto-blanco">Delete account</button></a>
+      </form>
+      <br /><br />
+    </div>
+  </div>
+</div>
+<%- include('footer') %>

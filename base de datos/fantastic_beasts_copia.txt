@@ -1,0 +1,70 @@
+CREATE DATABASE fantastic_beasts;
+
+USE fantastic_beasts;
+
+CREATE TABLE wizard (
+wizard_id int not null auto_increment,
+name varchar(100) not null,
+email varchar(60) not null unique,
+password varchar(100) not null,
+wizard_avatar varchar(45),
+house varchar(45),
+blood_status varchar(45),
+type_of_wand varchar(45),
+status tinyint(1) not null default '0',
+primary key(wizard_id) 
+);
+
+select * from wizard;
+
+insert into wizard (name, email, password, house, type_of_wand) values ("Newt Scamander", "newtscamander@newtscamander.com", "newtscamander@newtscamander.com", "Hufflepuff","Wood and core");
+insert into wizard (name, email, password, house, type_of_wand) values ("Albus Dumbledore", "albusdumbledore@albusdumbledore.com", "albusdumbledore@albusdumbledore.com", "Gryffindor","The Elder Wand");
+
+CREATE TABLE CREATURES( -- creature
+creature_id int not null auto_increment,
+name varchar(100) not null,
+native_to varchar(45),
+description varchar(150),
+classification varchar(45),
+creature_photo varchar(45),
+belongs_to int not null, -- wizard_id
+status tinyint(1) not null default '0',
+primary key(creature_id),
+foreign key(belongs_to) references wizard(wizard_id) on delete cascade on update cascade -- FK (foreign key)
+);
+
+select * from creatures;
+
+insert into creatures (name, native_to, classification, belongs_to) values ("Niffler", "Great Britain", "XXX", 1);
+insert into creatures (name, native_to, classification, belongs_to) values ("Bowtruckle", "England, Germany and Scandinavia", "XX", 1);
+insert into creatures (name, native_to, classification, belongs_to) values ("Fawkes", "Egypt, India and China", "XXXX", 2);
+
+select name, email from wizard;
+
+select name, native_to from creatures;
+
+update wizard set status=0;
+
+-- Muestra las criaturas que posee cada mago 
+select wizard.wizard_id, wizard.name, creatures.name 
+from wizard
+	inner join creatures 
+on wizard.wizard_id = creatures.belongs_to;
+
+delete from creatures where creature_id=3; -- creature-wizard.id
+
+-- Muestra la vista de perfil de un mago con sus criaturas con una sola consulta a la base de datos
+SELECT wizard.*, creatures.*
+from wizard
+	left join creatures on wizard.wizard_id = creatures.belongs_to and creatures.status = 0
+where wizard.status = 0 AND wizard.wizard_id = 2;
+
+-- Borrado logico de un mago??
+update wizard	
+	inner join creatures on wizard.wizard_id = creatures.belongs_to set wizard.status=1, creatures.status =1
+where wizard.wizard_id = creatures.belongs_to;
+
+-- activar magos??
+update wizard	
+	inner join creatures on wizard.wizard_id = creatures.belongs_to set wizard.status=0, creatures.status =0
+where wizard.wizard_id = creatures.belongs_to;

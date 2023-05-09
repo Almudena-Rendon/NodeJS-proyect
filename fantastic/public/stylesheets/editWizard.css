@@ -1,0 +1,13 @@
+.edit-wizard{
+  background-image: linear-gradient(
+  rgb(5, 5, 5),
+  rgba(15, 30, 52, 0.4)
+ ),  
+  url(/images/design/cover6.jpg);
+  background-position: center;
+}
+
+.edit-form{
+  margin:0px auto;
+  padding: 8vh 0px;
+}
