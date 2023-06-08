@@ -115,7 +115,7 @@ class WizardController {
     });
   };
 
-    // Renderiza la vista del formulario de edición de artista
+    // Renderiza la vista del formulario de edición del mago
     viewEditForm = (req, res) => {
       let wizard_id = req.params.wizard_id;
       let sql = `SELECT * FROM wizard WHERE wizard_id = ${wizard_id}`;
