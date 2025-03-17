@@ -4,7 +4,7 @@ async function main(mail) {
   let transporter = nodemailer.createTransport({
     host: process.env.SMPT_HOST,
     port: process.env.SMPT_PORT,
-    secure: process.env.SMPT_SECURE, // true for 465, false for other ports
+    secure: process.env.SMPT_PORT === 465 ? true : process.env.SMPT_SECURE, // true for 465, false for other ports
     auth: {
       user: process.env.SMPT_USER, // generated ethereal user
       pass: process.env.SMPT_PASSWORD, // generated gmail password
